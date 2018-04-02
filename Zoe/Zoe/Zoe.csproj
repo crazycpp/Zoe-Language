@@ -34,6 +34,14 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Lexer\Lexer.cs" />
+    <Compile Include="Lexer\Scanner.cs" />
+    <Compile Include="Lexer\Token.cs" />
+    <Compile Include="Lexer\Matcher.cs" />
+    <Compile Include="Lexer\KeywordMatcher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lexer\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
