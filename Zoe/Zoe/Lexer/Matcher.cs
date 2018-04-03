@@ -1,14 +1,22 @@
 ﻿using System;
 namespace Zoe.Lexer {
-    public class Matcher {
+    public abstract class Matcher {
         public int ID{
             get;
-            private set;
+            protected set;
         }
 
-        public Matcher(){
-            
+        public bool Ignore
+        {
+            get;
+            protected set;
         }
+
+        public Matcher() {
+            Ignore = false;
+        }
+
+        public abstract Token Match(Scanner scanner);
 
     }
 }

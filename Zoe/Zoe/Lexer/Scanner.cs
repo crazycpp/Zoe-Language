@@ -1,22 +1,58 @@
 ﻿using System;
 namespace Zoe.Lexer {
+    /// <summary>
+    /// 源码扫描器
+    /// </summary>
     public class Scanner {
 
-        private int _Col;
-        private int _Line;
-        private int _ReadedCount;
+        public string Source {
+            get;
+            set;
+        }
 
-        private string _Source;
-        private string _FileName;
+        public int ReadedCount
+        {
+            get;
+            private set;
+        }
+
+        public int RemainCount {
+            get { return Source.Length-ReadedCount; }
+        }
+
+        public TokenPos Pos = TokenPos.InitPos;
 
         public Scanner() {
-            _Col = 0;
-            _Line = 0;
-            _ReadedCount = 0;
+
+            ReadedCount = 0;
+            _ = TokenPos.InitPos;
+        }
+
+        public void Init(string source, string fileName) {
+            Source = source;
+            Pos.FileName = fileName;
+        }
+
+        public char Peek(int count) {
+            if(IsEof(count))
+                return '\0';
+
+            return Source[ReadedCount + count];
+        }
+
+        public void Consume(int count) {
+            Pos.Col += count;
+            ReadedCount += count;
+        }
+
+        public void ChangeLine() {
+            Pos.Col = 1;
+            Pos.Line++;
+            ReadedCount++;
         }
 
         public bool IsEof(int Count){
-            return _ReadedCount + Count >= _Source.Length;
+            return ReadedCount + Count >= Source.Length;
         }
     }
 }
