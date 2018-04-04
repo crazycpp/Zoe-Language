@@ -44,6 +44,11 @@
     <Compile Include="Lexer\Token.cs" />
     <Compile Include="Lexer\Matcher.cs" />
     <Compile Include="Lexer\KeywordMatcher.cs" />
+    <Compile Include="Lexer\CStyleCommentMatcher.cs" />
+    <Compile Include="Lexer\BlockCommentMatcher.cs" />
+    <Compile Include="Lexer\SignMatcher.cs" />
+    <Compile Include="Lexer\IdentifierMatcher.cs" />
+    <Compile Include="Lexer\StringMatcher.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -40,6 +40,15 @@ namespace Zoe.Lexer {
             return Source[ReadedCount + count];
         }
 
+        public char Current{
+            get{
+                if( IsEof(0) )
+                    return '\0';
+
+                return Source[ReadedCount];   
+            }
+        }
+
         public void Consume(int count) {
             Pos.Col += count;
             ReadedCount += count;
