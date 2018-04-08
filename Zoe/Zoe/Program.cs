@@ -7,13 +7,30 @@ namespace Zoe {
     class MainClass {
         public static void Main( string[] args ) {
 
-            string code = "func \nvar";
+            string code = "class bird\nfunc init { y=100 z = -6.601 \nx=y+z\n }";
 
             Lexer.Lexer lexer = new Lexer.Lexer();
-            lexer.AddMatcher( new LinebreakMatcher( (int)TokenType.Token_Whitespace ) );
-            lexer.AddMatcher(new WhitespaceMatcher( (int) TokenType.Token_Linebreak));
-            lexer.AddMatcher(new KeywordMatcher((int)TokenType.Token_Keywork, "func"));
+            lexer.AddMatcher( new LinebreakMatcher( (int)TokenType.Token_Whitespace).IgnoreThis() );
+            lexer.AddMatcher( new WhitespaceMatcher( (int) TokenType.Token_Linebreak).IgnoreThis() );
+
+            // number
+            lexer.AddMatcher(new NumberMatcher((int)TokenType.Token_Number));
+
+            // sign
+            lexer.AddMatcher(new SignMatcher((int)TokenType.Token_Sign, "="));
+            lexer.AddMatcher(new SignMatcher((int)TokenType.Token_Sign, "+"));
+            lexer.AddMatcher(new SignMatcher((int)TokenType.Token_Sign, "-"));
+            lexer.AddMatcher(new SignMatcher((int)TokenType.Token_Sign, "{"));
+            lexer.AddMatcher(new SignMatcher((int)TokenType.Token_Sign, "}"));
+
+
+            // keyword Matcher
+            lexer.AddMatcher( new KeywordMatcher((int)TokenType.Token_Keywork, "func") );
             lexer.AddMatcher( new KeywordMatcher( (int)TokenType.Token_Keywork, "var" ) );
+            lexer.AddMatcher( new KeywordMatcher((int)TokenType.Token_Keywork, "class"));
+
+            lexer.AddMatcher( new IdentifierMatcher((int)TokenType.Token_Ident));
+
 
             lexer.Init(code, "hello.zs");
 

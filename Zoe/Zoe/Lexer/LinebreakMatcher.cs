@@ -7,6 +7,7 @@ namespace Zoe.Lexer {
 
         public LinebreakMatcher(int id ) {
             base.ID = id;
+            base.Name = string.Empty;
         }
 
         public override Token Match( Scanner scanner ) {

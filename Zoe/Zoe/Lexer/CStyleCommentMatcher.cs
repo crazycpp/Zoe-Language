@@ -6,6 +6,7 @@ namespace Zoe.Lexer {
         
         public CStyleCommentMatcher(int ID) {
             base.ID = ID;
+            base.Name = "COMMENT";
         }
 
 

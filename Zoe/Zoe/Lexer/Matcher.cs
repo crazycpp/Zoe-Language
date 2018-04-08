@@ -1,13 +1,17 @@
 ﻿using System;
 namespace Zoe.Lexer {
     public abstract class Matcher {
-        public int ID{
+        public int ID {
             get;
             protected set;
         }
 
-        public bool Ignore
-        {
+        public string Name {
+            get;
+            protected set;
+        }
+
+        public bool Ignore {
             get;
             protected set;
         }
@@ -16,7 +20,11 @@ namespace Zoe.Lexer {
             Ignore = false;
         }
 
-        public abstract Token Match(Scanner scanner);
+        public Matcher IgnoreThis(){
+            Ignore = true;
+            return this;
+        }
 
+        public abstract Token Match(Scanner scanner);
     }
 }

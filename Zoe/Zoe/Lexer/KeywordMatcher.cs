@@ -7,7 +7,8 @@ namespace Zoe.Lexer {
         }
 
         public KeywordMatcher(int id, string keyword) {
-            ID = id;
+            base.ID = id;
+            base.Name = "IDENT";
 
             for(int i = 0; i<keyword.Length; i++) {
                 if(!IsKeyword(i, keyword[i])) {

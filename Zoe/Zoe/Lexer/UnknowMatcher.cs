@@ -9,7 +9,7 @@ namespace Zoe.Lexer {
 
         public UnknowMatcher(int id) {
             base.ID = id;
-            Ignore = true;
+            base.Name = "UnKnowMatcher";
         }
 
 
@@ -18,7 +18,7 @@ namespace Zoe.Lexer {
             var tokenPos = scanner.Pos;
             var index = scanner.ReadedCount;
             scanner.Consume(1);
-            return new Token(ID, scanner.Source.Substring(index, scanner.ReadedCount), tokenPos );
+            return new Token(ID, scanner.Source.Substring(index, 1), tokenPos );
         }
     }
 }

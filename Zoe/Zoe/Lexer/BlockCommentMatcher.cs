@@ -6,6 +6,7 @@ namespace Zoe.Lexer {
 
         public BlockCommentMatcher(int ID) {
             base.ID = ID;
+            base.Name = "COMMENT";
         }
 
         public override Token Match( Scanner scanner ) {
@@ -28,7 +29,6 @@ namespace Zoe.Lexer {
 
 
             return new Token(ID, comment.ToString(), pos);
-
         }
     }
 }

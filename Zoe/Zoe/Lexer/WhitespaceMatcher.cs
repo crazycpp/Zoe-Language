@@ -9,7 +9,7 @@ namespace Zoe.Lexer {
 
         public WhitespaceMatcher(int id) {
             base.ID = id;
-            Ignore = true;
+            base.Name = string.Empty;
         }
 
         bool IsWhitespaceChar(char c) {

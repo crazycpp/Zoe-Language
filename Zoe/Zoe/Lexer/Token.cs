@@ -59,7 +59,7 @@ namespace Zoe.Lexer {
         }
 
         public new string ToString() {
-            return Pos.FileName+" "+Pos.Col+":"+Pos.Line+ " " + this.ID + " " + this.Value;
+            return Pos.FileName+ " " + Pos.Line + ":" +Pos.Col + " " + this.ID + " " + this.Value;
         }
     }
 }

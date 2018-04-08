@@ -8,7 +8,10 @@ namespace Zoe.Parser {
     enum TokenType {
         Token_Whitespace,
         Token_Linebreak,
+        Token_Number,
+        Token_Sign,
         Token_Keywork,
+        Token_Ident,
         Token_Unknow,
     }
 }

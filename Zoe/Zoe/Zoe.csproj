@@ -49,6 +49,7 @@
     <Compile Include="Lexer\SignMatcher.cs" />
     <Compile Include="Lexer\IdentifierMatcher.cs" />
     <Compile Include="Lexer\StringMatcher.cs" />
+    <Compile Include="Lexer\NumberMatcher.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

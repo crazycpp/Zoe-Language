@@ -9,6 +9,7 @@ namespace Zoe.Lexer {
 
         public SignMatcher(int id, string sign) {
             ID = id;
+            Name = "Sign";
 
             for( int i = 0; i < sign.Length;  i++){
                 if (!IsSign(sign[i])){
