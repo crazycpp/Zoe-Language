@@ -4,6 +4,12 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoe", "Zoe\Zoe\Zoe.csproj", "{54B35968-CB74-4F9E-818C-1A696C8F4C78}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{CC51394F-518A-479C-9EAE-1EBA1A5017D9}"
+	ProjectSection(SolutionItems) = preProject
+		Doc\EBNF.txt = Doc\EBNF.txt
+		Doc\README.md = Doc\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
